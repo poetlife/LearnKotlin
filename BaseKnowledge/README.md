@@ -221,4 +221,8 @@ fun main(args: Array<String>)
 }
 ```
 ### for循环
+在Kotlin中，for循环可以直接枚举集合中的元素，也可以按集合索引来枚举元素
 ### while循环
+和Java中一样，也分为while和do...while。
+## 小结
+虽然编程语言之间都是互通的，但是由于Kotlin中**加入了很多语法糖**，因此要充分了解Kotlin语言，，还要下一番功夫。
