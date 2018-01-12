@@ -169,5 +169,56 @@ var x = 1
     + 如果分支中多于1条语句要用{…}
     + 满足条件之后会自动终止when语句的执行，并不需要像switch那样每个case语句都加上break
 2. when作为表达式使用
+```
+// when作为表达式使用
+    var x = 1
+    var m = when (x) {
+        1 -> {
+            println("x == 1")
+            20
+        }
+        2 -> {
+            println("x == 2")
+            60
+        }
+        else -> {
+            println("x is neither 1 or 2")
+            40
+        }
+    }
+    println("the value of m is $m")
+```
+3. 多个分支执行相同的代码
+使用逗号分隔条件
+4. 使用`in`关键字确定一个范围
+```
+// 使用in关键字确定范围
+    var n = 25
+    when (n) {
+        in 1..10 -> println("满足条件")
+        in 11..20 -> println("不满足条件")
+        !in 30..60 -> println("hello world")  // !in 表示不再这个范围内
+        else -> println("条件未知")
+    }
+```
+5. when的分支条件不仅可以使常量也可以使任意表达式
+```
+fun getValue(x:Int): Int{
+    return x * x
+}
+
+fun main(args: Array<String>)
+{
+    // 分支条件是函数
+    var n = 4
+    when (n) {
+        getValue(2) -> println("满足条件")
+        getValue(3) -> println("不满足条件")
+        else -> {
+            println("条件未知")
+        }
+    }
+}
+```
 ### for循环
 ### while循环
