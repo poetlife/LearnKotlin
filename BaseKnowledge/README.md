@@ -149,5 +149,6 @@ import com.pjd.helloworld.MyClass as mc  // 起别名
     max = if (a < b) a else b
 ```
 ### when语句
+在kotlin中，when替换了C语言风格的switch语句，标准的switch语句用法如下：
 ### for循环
 ### while循环
