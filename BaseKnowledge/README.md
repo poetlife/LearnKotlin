@@ -131,6 +131,23 @@ import com.pjd.helloworld.MyClass as mc  // 起别名
     1. kotlin.js.*
 ## 控制流
 ### 条件语句
+```
+// 学习if
+    // Traditional
+    var a: Int = 20
+    var b = 30
+    var max: Int
+    if (a < b) max = b
+    
+    var min: Int
+    if (a > b) {
+        min = a
+    } else{
+        min = b
+    }
+    // 表达式使用
+    max = if (a < b) a else b
+```
 ### when语句
 ### for循环
 ### while循环
