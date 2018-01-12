@@ -127,7 +127,8 @@ import com.pjd.helloworld.MyClass as mc  // 起别名
     6. kotlin.ranges.*
     7. kotlin.sequences.*
     8. kotlin.text.*
-4. 
+4. JavaSCript默认导入的包如下
+    1. kotlin.js.*
 ## 控制流
 ### 条件语句
 ### when语句
