@@ -1,5 +1,13 @@
 # Kotlin基础知识
+人生第一段Kotlin代码
+```
+package com.pjd.helloworld
 
+fun main(args: Array<String>)
+{
+    println("Hello, world!")
+}
+```
 ## 基本语法
 ### 定义变量
 1. 定义常量
