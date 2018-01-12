@@ -27,7 +27,8 @@ println(m * m)
 ```
 若返回为Unit，可以没有返回值，这个unit也可以省略。
 ## 基础数据类型
-数据类型 | 占用字节数
+### 数值类型
+数值类型 | 占用字节数
 -------- | ---------
 Double | 8
 Float | 4
@@ -37,10 +38,41 @@ Short | 2
 Byte | 1
 
 整数默认类型是`Int`，浮点数的默认类型是`Double`.
-### 数值类型
 ### 字符类型
+在Kotlin中，字符类型用Char描述，不过和Java不同的是，在Kotlin中，字符不能**直接看做是数字**。
 ### 布尔类型
+三种逻辑操作符，与(&&)，或(||)，非(!)
 ### 数组
+在Kotlin中，数组使用`Array`类描述，在该类中包含了get和set方法，size属性等其他很多有用的成员方法。
+```
+// 指定数组
+    // 1. 使用arrayOf函数定义可以储存任意值的数组
+    var arr1 = arrayOf(1, 2, 3, 'a')
+    println(arr1[3])
+    arr1[2] = 'b'
+    println(arr1[2])
+
+    // 使用arrayOfNull定义数组
+    var arr2 = arrayOfNulls<Int>(10)
+    println("arr2的长度：" + arr2.size)
+
+    // 使用Array类的构造器定义数组，其中第二个参数是指初始化每个数组元素的值
+    // 每个数组元素的值就是当前数组索引的乘积
+    var arr3 = Array(10, {i -> (i * i) .toString()})
+    println(arr3[3])
+
+    // 使用intArrayOf函数定义数组
+    var arr4 = intArrayOf(20, 30, 40, 50, 60)
+    println("arr4[2] = " + arr4[2])
+```
+输出为
+```
+a
+b
+arr2的长度：10
+9
+arr4[2] = 40
+```
 ### 字符串
 ### 字符串模板
 
