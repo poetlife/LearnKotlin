@@ -88,6 +88,46 @@ Kotlin中，使用String表示字符串类型，有如下两种类型：
 ## 包（Package）
 Package和Ｃ#中的命名空间类似，是为了**尽可能避免类名重复**而设计的。在Java中，Package和目录同一到了一起，也就是说，Package就是目录。例如有个Java类MyClass，该类的包是util.net.system，那么就意味着存在一个/util/net/system目录结构，而MyClass.class或MyClass.java文件就在这个目录里面。
 在Kotlin中，也存在包的概念，包在表达方式上和Java完全一样，但是**Kotlin中的包和目录没什么关系**，而仅仅是为了**引用文件中的资源**而设计的。
+1. 引用其他文件的函数或类
+`Person.kt`文件
+```
+package com.pjd.helloworld
+
+fun getName(): String
+{
+    return "Bill Gates"
+}
+
+class MyClass {}
+```
+`Hello.kt`文件
+```
+package com.pjd.helloworld
+
+fun main(args: Array<String>)
+{
+    println("Hello, world!")
+    println(com.pjd.helloworld.getName())
+    println(com.pjd.helloworld.MyClass())  // 创建对象的实例
+}
+
+```
+2. 使用import导入资源
+```
+import com.pjd.helloworld.getName
+import com.pjd.helloworld.*  // 导入所有的资源
+import com.pjd.helloworld.MyClass as mc  // 起别名
+```
+3. Kotlin默认导入的包
+    1. kotlin.*
+    2. Kotlin.annotation.*
+    3. kotlin.collections.*
+    4. kotlin.comparisons.*
+    5. kotlin.io.*
+    6. kotlin.ranges.*
+    7. kotlin.sequences.*
+    8. kotlin.text.*
+4. 
 ## 控制流
 ### 条件语句
 ### when语句
