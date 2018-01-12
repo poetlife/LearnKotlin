@@ -150,5 +150,24 @@ import com.pjd.helloworld.MyClass as mc  // 起别名
 ```
 ### when语句
 在kotlin中，when替换了C语言风格的switch语句，标准的switch语句用法如下：
+1. when作为语句使用
+```
+var x = 1
+    when (x)
+    {
+        1 -> {
+            println("x == 1")
+            println("hello world!")
+        }
+        2 -> println("x == 2")
+        else -> {
+            println("x is neither 1 or 2")
+        }
+    }
+```
+    + when语句会根据传入的值寻找第一个满足条件的分支，找到后执行分支的语句
+    + 如果分支中多于1条语句要用{…}
+    + 满足条件之后会自动终止when语句的执行，并不需要像switch那样每个case语句都加上break
+2. when作为表达式使用
 ### for循环
 ### while循环
