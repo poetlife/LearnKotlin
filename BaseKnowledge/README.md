@@ -224,5 +224,8 @@ fun main(args: Array<String>)
 在Kotlin中，for循环可以直接枚举集合中的元素，也可以按集合索引来枚举元素
 ### while循环
 和Java中一样，也分为while和do...while。
+## 标签
+在Kotlin中，任何表达式都可以用标签（label）来标记。标签的格式为标识符后跟@符号，例如`abc@`都是有效的符号。我们可以用Label标签来控制return、break、continue的跳转（jump）行为。
+Kotlin的函数是可以被嵌套的。它有函数字面量、局部函数等。有了标签限制的return，我们就可以从外层函数返回了。
 ## 小结
 虽然编程语言之间都是互通的，但是由于Kotlin中**加入了很多语法糖**，因此要充分了解Kotlin语言，，还要下一番功夫。
