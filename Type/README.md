@@ -46,3 +46,14 @@ class java.lang.Object
 ```
 Kotlin所有类都有一个共同的超类Any，如果类声明时没有指定超类，则默认为Any。
 Any只有`equals()`、`hashCode()`、`toString()`三个方法。
+在Kotlin中，操作符`==`会被编译器翻译成`equals()`函数。
+
+## 基本类型（Primitive Types）
+在Kotlin中，一切皆对象，所有类型都是引用类型，没有Java中的基本类型。但是，可以把Kotlin中对应的这几种基本数据类型，理解为Java的基本类型的装箱类。
+
+## `Any?`可空类型（Nullable Types）
+我们知道，在Java中如果一个变量可以是`null`，那么使用它调用一个方法就是不安全的，因为它会导致：`NullPointerException`。
+
+## Kotlin.Unit类型
+
+## Kotlin.Nothing类型
