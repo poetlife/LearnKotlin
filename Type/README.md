@@ -93,7 +93,13 @@ public final operator fun plus(other: Short): Int defined in kotlin.Int
 20 + null
    ^
 ```
+### 可空类型`String?`和安全调用`?.`
+![IDE检查null](https://camo.githubusercontent.com/1ce59d1a59c20ff098b8d97ff14ce3e945d2dd9c/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f313233333335362d363331336238656330363663323063352e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430)
 
 ## Kotlin.Unit类型
+Kotlin也是面向表达式的语言。在Kotlin中所有控制流语句都是表达式（除了变量赋值、异常等）。
+Kotlin中的`Unit`类型实现了与Java中的`void`一样的功能。不同的是，当一个函数没有返回值的时候，我们用`Unit`来表示这个特征，而不是`null`。
 
 ## Kotlin.Nothing类型
+Kotlin中没有类似Java和C中的函数没有返回值的标记`void`，但是拥有一个对应的`Nothing`。
+Unit类型表达式计算结果的返回类型是Unit。Nothing类型的表达式计算结果是永远不会返回的（和Java中的`void`相同）。
