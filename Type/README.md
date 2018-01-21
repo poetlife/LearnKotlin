@@ -32,3 +32,17 @@
 根据变量名是否需要显示给出类型声明来区分。
 
 ## 根类型Any
+```
+E:\pjd\软件\kotlin\kotlinc\bin>kotlinc-jvm
+Welcome to Kotlin version 1.2.20 (JRE 1.8.0_144-b01)
+Type :help for help, :quit for quit
+>>> val any = Any()
+val any = Any()>>> any
+java.lang.Object@169d577
+>>> any :: class
+class kotlin.Any
+>>> any:: class.java
+class java.lang.Object
+```
+Kotlin所有类都有一个共同的超类Any，如果类声明时没有指定超类，则默认为Any。
+Any只有`equals()`、`hashCode()`、`toString()`三个方法。
