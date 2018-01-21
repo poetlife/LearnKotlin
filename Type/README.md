@@ -53,6 +53,46 @@ Any只有`equals()`、`hashCode()`、`toString()`三个方法。
 
 ## `Any?`可空类型（Nullable Types）
 我们知道，在Java中如果一个变量可以是`null`，那么使用它调用一个方法就是不安全的，因为它会导致：`NullPointerException`。
+Kotlin把可空性（nullability）作为类型系统的一部分，Kotlin编译器可以直接在编译的过程中发现许多可能的错误，并减少在运行时抛出异常的可能性。
+
+### What's null?
+我们通常把null理解为编程语言中定义的特殊的0，把我们初始化的指针指向它，以防止“野指针”的恶果。在Java中，`null`是任何引用类型的默认值，不严格的说是所有Object类型的默认值。
+
+### Kotlin中的`null`
+
+```
+
+>>> null.equals(null)
+null.equals(null)true
+>>> null is Any
+false
+>>> null is Any?
+true
+>>> null == null
+true
+>>> var a = null
+>>> a
+null
+>>> a = 1
+error: the integer literal does not conform to the expected type Nothing?
+a = 1
+    ^
+
+>>> "1" +null
+1null
+>>> null + 20
+null20
+>>> 20 + null
+error: none of the following functions can be called with the arguments supplied:
+public final operator fun plus(other: Byte): Int defined in kotlin.Int
+public final operator fun plus(other: Double): Double defined in kotlin.Int
+public final operator fun plus(other: Float): Float defined in kotlin.Int
+public final operator fun plus(other: Int): Int defined in kotlin.Int
+public final operator fun plus(other: Long): Long defined in kotlin.Int
+public final operator fun plus(other: Short): Int defined in kotlin.Int
+20 + null
+   ^
+```
 
 ## Kotlin.Unit类型
 
