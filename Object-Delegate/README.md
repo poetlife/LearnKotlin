@@ -56,5 +56,7 @@ fun main(args:Array<String>){
 ```
 ## 委托
 委托（Delegate）其实是一种非常好的代码重用的方式，有点类似[AOP](https://baike.baidu.com/item/AOP/1332219?fr=aladdin)
+### 类的委托
+Kotlin直接支持委托模式。
 ## 标准委托
 ## 小结
