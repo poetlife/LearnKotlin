@@ -120,7 +120,30 @@ open class Uozoyo
 ## 类的继承
 
 ## 接口
+```
+// 定义MyInterface接口
+interface MyInterface
+{
+    fun process()
+    // 有方法体的可以在继承的类中不重写
+    fun getName(): String
+    {
+        return "Bill"
+    }
+}
 
+// MyClass类实现了MyInterface接口，必须重写MyInterface中的两个方法
+class MyClass: MyInterface
+{
+    override fun process() {
+        println("function process...")
+    }
+
+    override fun getName(): String {
+        return "Mike"
+    }
+}
+```
 ## 抽象类
 
 ## 小结
