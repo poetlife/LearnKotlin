@@ -43,7 +43,18 @@ enum class Direction private constructor(val d:Int)
 }
 ```
 ### 枚举类的其他功能
-
+```
+// other functions
+    // 无论是Java还是Kotlin都提供了相应的API来获取枚举值的名字和索引
+    println(direction2.name)  // 获取名字
+    println(direction3.ordinal)  // 获取索引
+    // 传入枚举值名称来获取枚举值对应的数值
+    println(Direction.valueOf("WEST"))
+    // 遍历枚举类中所有的枚举值对应的数值
+    for (d in Direction.values()){
+        println(d)
+    }
+```
 ## 扩展
 
 ## 小结
