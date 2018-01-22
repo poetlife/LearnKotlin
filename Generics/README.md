@@ -18,6 +18,20 @@ fun main(args:Array<String>){
 ```
 ## 类型变异
 Kotlin泛型并没有提供通配符，取而代之的是out和in关键字。用out声明的泛型占位符只能在获取泛型类型值的地方，如函数的返回值。用in声明的泛型占位符只能在设置泛型类型值的地方，如函数的参数。我们习惯将只能读取的对象称为生产者（Producer），将只能设置的对象称为消费者（Consumer）。
+### out
+```
+// 使用out关键字
+// 我们可以标注Source的类型参数T来确保它仅从Source<T>成员中返回（生产）并从不被消费
+interface Source<out T>
+{
+    fun nextT(): T
+}
+
+fun demo(strs: Source<String>){
+    // 这个没问题，因为T是一个out-参数
+    val objects: Source<Any> = strs
+}
+```
 ## 类型投射
 ## 星号投射
 ## 泛型函数
