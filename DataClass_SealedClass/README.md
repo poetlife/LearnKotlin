@@ -53,5 +53,11 @@ fun main(args:Array<String>){
 + 数据类不能是抽象类、open类、封闭类或内部类。
 
 ### 对象复制
+```
+// 演示数据类的复制
+    val john = User("John", 40)
+    val olderJohn = john.copy(age=60)
+```
 ### 数据类成员的解构
+
 ## 封闭类（Sealed Class）
