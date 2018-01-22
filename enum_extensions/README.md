@@ -143,11 +143,57 @@ fun main(args: Array<String>){
 }
 ```
 ### 成员函数冲突的解决方案
-
+如果类内部成员函数和通过扩展添加的成员函数冲突，那么内部成员的优先级更高，因此**通过扩展无法覆盖内部成员函数**。
 ### 扩展属性
+```
+// 扩展属性
+class MyClass{
+    // 需要声明为public，否则扩展属性无法访问此变量
+    var mValue: Int = 0
+    // 内部属性
+    var str: String = ""
+        get() = field
+        set(value) {
+            field = value
+        }
 
+}
+// 扩展属性，需要实现Setter部分
+var MyClass.value: Int
+    get() = mValue
+    set(value){
+        mValue = value
+    }
+
+
+fun main(args: Array<String>){
+    // main function
+    var myClass = MyClass()
+    myClass.str = "hello"
+    myClass.value = 400  // 设置扩展属性的值
+    println(myClass.str)
+    println(myClass.mValue)
+    println(myClass.value)
+}
+```
 ### 扩展伴随对象（companion object）
+```
+// 添加伴随对象
+class MyClass{
+    companion object {
 
+    }
+}
+
+fun MyClass.Companion.test(){
+    println("这是伴随对象成员函数")
+}
+
+fun main(args:Array<String>){
+    // 调用伴随对象成员函数
+    MyClass.test()
+}
+```
 ### 扩展的范围
 
 ### 在类中使用扩展
