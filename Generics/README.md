@@ -32,6 +32,18 @@ fun demo(strs: Source<String>){
     val objects: Source<Any> = strs
 }
 ```
+### in
+```
+// 使用in关键字
+abstract class Comparable<in T>{
+    abstract fun compareTo(other: T): Int // 这里不能用T，因为T被声明为in
+}
+
+fun demo(x: Comparable<Number>){
+    x.compareTo(1.0)  // 1.0是Double类型，是Number的子类型
+    val y: Comparable<Double> = x  // OK! 
+}
+```
 ## 类型投射
 ## 星号投射
 ## 泛型函数
