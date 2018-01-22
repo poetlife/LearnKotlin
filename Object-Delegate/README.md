@@ -58,5 +58,30 @@ fun main(args:Array<String>){
 委托（Delegate）其实是一种非常好的代码重用的方式，有点类似[AOP](https://baike.baidu.com/item/AOP/1332219?fr=aladdin)
 ### 类的委托
 Kotlin直接支持委托模式。
+```
+// 类的委托
+interface Base
+{
+    fun print()
+}
+class BaseImpl(val x: Int): Base
+{
+    override fun print() {
+        println(x)
+    }
+}
+class Derived(b: Base): Base by b
+{
+    // Derived本身的方法
+    fun getName(): String{
+        return "Bill"
+    }
+}
+
+fun main(args:Array<String>){
+    val b = BaseImpl(10)
+    Derived(b).print()  // output is 10
+}
+```
 ## 标准委托
 ## 小结
