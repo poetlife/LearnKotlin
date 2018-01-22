@@ -1,4 +1,4 @@
-# 第6章 泛型（Generic）
+# 第6章 泛型（Generic）【remain confused!】
 所谓泛型，就是指在定义数据结构时，只指定类型的占位符，待到使用该数据结构时再指定具体的数据类型。
 ## 泛型基础
 ```
@@ -44,7 +44,8 @@ fun demo(x: Comparable<Number>){
     val y: Comparable<Double> = x  // OK! 
 }
 ```
-## 类型投射
+## 类型投射（type projection）
+将类型参数T声明为out非常方便，并且能避免使用处子类型化的麻烦，但是有些类实际上不能限制为止返回T。
 ## 星号投射
 ## 泛型函数
 ## 泛型约束
