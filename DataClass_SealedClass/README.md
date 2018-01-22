@@ -28,6 +28,25 @@ fun main(args:Array<String>){
 }
 ```
 这个显然不是我们需要的，因此我们用数据类重写User类。
+```
+// 使用数据类
+data class User(val name: String, var age: Int){}
+
+fun main(args:Array<String>){
+    // main function
+    var user1 = User("Mike", 34)
+    var user2 = User("Mike", 34)
+    println(user1)  // 默认调用了toString(), 而这个方法会默认调用hashCode()
+    println(user2)
+    println(user1.equals(user2))
+    /*
+    out:
+    User(name=Mike, age=34)
+    User(name=Mike, age=34)
+    true
+     */
+}
+```
 ### 对象复制
 ### 数据类成员的解构
 ## 封闭类（Sealed Class）
