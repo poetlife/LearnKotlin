@@ -59,5 +59,6 @@ fun main(args:Array<String>){
     val olderJohn = john.copy(age=60)
 ```
 ### 数据类成员的解构
-
-## 封闭类（Sealed Class）
+数据解除结构，Kotlin编译器会自动为数据类生成组件函数（Component Function）。
+## 封闭类（Sealed Class）（remain confused）
+封闭类也是Kotlin的一个语法糖。可以把它理解为枚举的扩展。
