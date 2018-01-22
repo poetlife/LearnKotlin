@@ -112,6 +112,36 @@ fun main(args: Array<String>){
 }
 ```
 我们可以看到，`parent2`的实例虽然是`Child`但输出的仍然和`parent1.printResult（）`一样，所以我们可以看到：**通过扩展是不能添加可继承的成员函数的**，解决方法是将`printResult()`放到类中，再override。
+```
+open class Parent(val value1: Int, val value2: Int){
+    var mValue1: Int = value1
+    var mValue2: Int = value2
+    fun add():Int{
+        return mValue1 + mValue2
+    }
+
+    open fun printResult(){
+        println("${mValue1} + ${mValue2} = ${add()}")
+    }
+}
+class Child(value1: Int, value2: Int): Parent(value1, value2){
+    fun sub(): Int{
+        return mValue1 - mValue2
+    }
+
+    override fun printResult() {
+        println("${mValue1} - ${mValue2} = ${sub()}")
+    }
+}
+
+fun main(args: Array<String>){
+    // main function
+    var parent1: Parent = Parent(1, 2)
+    var parent2: Parent = Child(1, 2)
+    parent1.printResult()  // 1 + 2 = 3
+    parent2.printResult()  // 1 + 2 = 3
+}
+```
 ### 成员函数冲突的解决方案
 
 ### 扩展属性
