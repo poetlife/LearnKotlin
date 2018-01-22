@@ -83,5 +83,10 @@ fun main(args:Array<String>){
     Derived(b).print()  // output is 10
 }
 ```
+### 委托属性
+
+### 委托类的初始化函数
+
+### 委托的前提条件
 ## 标准委托
 ## 小结
