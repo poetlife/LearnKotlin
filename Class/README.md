@@ -85,6 +85,36 @@ Output
     + 属性
     + 内部类
     + 对象声明
+### 类属性
+```
+open class Uozoyo
+{
+    // 只读属性
+    val name: String
+        get() = "Bill"
+
+    var v: Int = 20
+    // 读写属性
+    
+    open var value: Int
+        get() = v
+        set(value)
+        {
+            println("Value属性被设置")
+            v = value
+        }
+     
+    // 保存属性的字段field
+    var value2: Int = 0
+        get() = field
+        set(value)
+        {
+            println("value2属性被设置")
+            field = value
+        }
+}
+```
+
 ## 修饰符（Modifiers）
 
 ## 类的继承
