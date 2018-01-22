@@ -58,7 +58,25 @@ enum class Direction private constructor(val d:Int)
 ## 扩展
 扩展是Kotlin中非常重要的功能，通过扩展，可以在没有源代码的情况下向类中添加成员，也可以在团队开发的情况下，通过扩展，将功能模块分散给多人开发。
 ### 扩展原生API
+声明一个扩展函数，我们需要用一个*接收者类型*也就是被扩展的类型来作为它的前缀。
+```
+// 扩展原生API
+// 对Kotlin原生集合类MutableList进行扩展，让该类有交换任意两个集合元素位置的能力
+fun MutableList<Int>.swap(index1: Int, index2:Int)
+{
+    val tmp = this[index1]
+    this[index1] = this[index2]
+    this[index2] = tmp
+}
 
+fun main(args: Array<String>){
+    // main function
+    var mutableList = mutableListOf(1, 2, 3)
+    // 调用已经定义好的拓展方法Swap
+    mutableList.swap(0, 2)  // 交换第一个和最后一个元素的位置
+    println(mutableList)
+}
+```
 ### 扩展自定义类
 
 ### 成员函数冲突的解决方案
