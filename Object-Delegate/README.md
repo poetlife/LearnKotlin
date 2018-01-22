@@ -42,6 +42,17 @@ Kotlin在匿名对象中可以任意访问变量，并且可以修改变量。
 ### 陪伴对象
 Kotlin中并没有静态类成员的概念，因此，陪伴对象（Companion Objects）就是Kotlin用来解决这个问题的语法糖。陪伴对象需要用关键字`companion`来声明。
 ```
+// 陪伴对象
+class MyClass
+{
+    companion object Factory{
+        fun create(): MyClass = MyClass()
+    }
+}
+
+fun main(args:Array<String>){
+    val instance = MyClass.create()
+}
 ```
 ## 委托
 ## 标准委托
