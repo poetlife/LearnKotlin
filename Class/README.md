@@ -119,7 +119,7 @@ open class Uozoyo
 
 ## 类的继承
 
-## 接口
+## 接口(remain confused)
 ```
 // 定义MyInterface接口
 interface MyInterface
@@ -145,5 +145,16 @@ class MyClass: MyInterface
 }
 ```
 ## 抽象类
+```
+// 抽象类
+open class Base{
+    open fun f(){
+        
+    }
+}
 
+abstract class Derived: Base(){
+    override abstract fun f()
+}
+```
 ## 小结
