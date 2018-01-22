@@ -84,6 +84,53 @@ fun main(args:Array<String>){
 }
 ```
 ### 委托属性
+使用委托属性之前
+```
+// 委托属性之前
+class MyClass1{
+    var name: String = ""
+    get() : String{
+        println("MyClass1.get已经被调用")
+        return field
+    }
+    set(value: String){
+        println("MyClass1.set已经被调用")
+        field = value
+    }
+}
+
+class MyClass2{
+    var name: String = ""
+        get() : String{
+            println("MyClass2.get已经被调用")
+            return field
+        }
+        set(value: String){
+            println("MyClass2.set已经被调用")
+            field = value
+        }
+}
+
+fun main(args: Array<String>){
+    // main function
+    var c1 = MyClass1()
+    var c2 = MyClass2()
+    c1.name = "Mike"
+    c2.name = "Jack"
+    println(c1.name)
+    println(c2.name)
+}
+
+/*
+output is like this:
+MyClass1.set已经被调用
+MyClass2.set已经被调用
+MyClass1.get已经被调用
+Mike
+MyClass2.get已经被调用
+Jack
+ */
+```
 
 ### 委托类的初始化函数
 
