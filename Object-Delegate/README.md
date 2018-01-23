@@ -56,6 +56,7 @@ fun main(args:Array<String>){
 ```
 ## 委托
 委托（Delegate）其实是一种非常好的代码重用的方式，有点类似[AOP](https://baike.baidu.com/item/AOP/1332219?fr=aladdin)
+委托模式是软件设计模式中的一项基本技巧。在委托模式中，有两个对象参与处理同一个请求，接受请求的对象将请求委托给另一个对象来处理。
 ### 类的委托
 Kotlin直接支持委托模式。
 ```
