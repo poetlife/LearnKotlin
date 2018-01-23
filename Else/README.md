@@ -34,6 +34,13 @@ Kotlin标准库将集合分为**可修改的和不可修改的**
 - MutableSet
 - MutableMap
 这些API都是接口，而且它们都是Collection的子接口。
+这些不可修改的集合，在声明的时候都使用了关键字out
+```
+public interface List<out E>: Collection<E>
+{
+   ...
+}
+```
 ## 值范围
 ## 类型检查与类型转换
 ## this表达式
