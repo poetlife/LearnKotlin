@@ -131,7 +131,51 @@ MyClass2.get已经被调用
 Jack
  */
 ```
+委托属性之后
+```
+import kotlin.reflect.KProperty
+// 委托属性
+class Delegate
+{
+    // 用于保存属性值的成员变量
+    var name: String = ""
+    // 调用委托属性的getter函数，会调用委托类的getValue函数
+    operator fun getValue(thisRef: Any?, property: KProperty<*>): String{
+        // 获取thisRef指定的类名
+        val className = thisRef.toString().substringBefore('@')
+        // 调用了String类的方法
+        println("${className}.get已经被调用")
+        return name
+    }
+    // 调用委托函数的setter函数，会调用委托类的setValue函数
+    operator fun setValue(thisRef: Any?, property: KProperty<*>, value: String){
+        // 获取thisRef指定的类名
+        val className = thisRef.toString().substringBefore('@')
+        println("${className}.set已经被调用")
+        name = value
+    }
+}
 
+class MyClass1
+{
+    // 将name属性委托给Delegate类
+    var name: String by Delegate()
+}
+class MyClass2
+{
+    var name: String by Delegate()
+}
+
+fun main(args: Array<String>){
+    // main function
+    var c1 = MyClass1()
+    var c2 = MyClass2()
+    c1.name = "Mike"
+    c2.name = "Jack"
+    println(c1.name)
+    println(c2.name)
+}
+```
 ### 委托类的初始化函数
 
 ### 委托的前提条件
