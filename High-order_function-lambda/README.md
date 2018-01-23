@@ -46,6 +46,9 @@ fun main(args: Array<String>){
 ## lambda表达式与匿名函数
 ### 函数类型
 ### Lambda表达式的语法
+```
+{x ,y -> x + y}
+```
 ### 匿名函数
 ### 闭包
 
