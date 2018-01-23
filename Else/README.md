@@ -26,13 +26,13 @@ var map = mutableMapOf<Int, String>()
 ## 集合
 Kotlin标准库将集合分为**可修改的和不可修改的**
 + 不可修改的集合API包括：
-- List
-- Set
-- Map
+    - List
+    - Set
+    - Map
 + 可修改的集合API包括：
-- MutableList
-- MutableSet
-- MutableMap
+    - MutableList
+    - MutableSet
+    - MutableMap
 这些API都是接口，而且它们都是Collection的子接口。
 这些不可修改的集合，在声明的时候都使用了关键字out
 ```
