@@ -10,6 +10,19 @@ fun main(args: Array<String>){
     var (name, age, salary) = person
 }
 ```
+如果想让一个函数返回多个值，并能够解构这些值，也需要返回**数据类对象**。
+
+有很多对象，可以保存一组值，并且可以通过for...in语句，将这些值解构出来。例如，Map对象就是这样子。
+```
+var map = mutableMapOf<Int, String>()
+    map.put(10, "bill")
+    map.put(20, "Mike")
+
+    // 解构map对象中的key-value键值对
+    for ((key, value) in map){
+        println("key=${key}  value=${value}")
+    }
+```
 ## 集合
 ## 值范围
 ## 类型检查与类型转换
