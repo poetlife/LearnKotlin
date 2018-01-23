@@ -67,5 +67,16 @@ Function<Int, *>，表示为Function<Int, out Any?>
 Function<*, *>，表示为Function<in nothing, out Any?>
 ```
 ## 泛型函数
+不仅类可以有泛型参数，函数一样可以有泛型参数。泛型参数放在函数名称之前。
+```
+// 泛型函数
+fun <T> singleOnList(item: T): List<T>
+{
+    // ....
+}
+
+// 调用
+val l = singleOnList<Int>(1)
+```
 ## 泛型约束
 ## 小结
