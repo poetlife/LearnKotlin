@@ -41,6 +41,25 @@ public interface List<out E>: Collection<E>
    ...
 }
 ```
+集合常用方式
+```
+// main function
+    val numbers: MutableList<Int> = mutableListOf(1, 2, 3)  // 创建可读写的列表对象
+    val readOnlyView: List<Int> = numbers  // 将读写列表变成字段列表
+    println(numbers)  // output is [1, 2, 3]
+    numbers.add(4)  // add new element to the list
+    println(readOnlyView)  // output is [1, 2, 3, 4] (remain kind of confused)
+```
+下面是常见的用来创建集合对象的函数：
++ listOf
++ setOf
++ mapOf
++ mutableListOf
++ mutableSetOf
++ mutableMapOf
+
+对于可读写的集合，可以通过**toXxx函数**将其转化为只读的版本，其中Xxx是List、Set和Map。
+
 ## 值范围
 ## 类型检查与类型转换
 ## this表达式
