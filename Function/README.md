@@ -31,3 +31,28 @@ fun main(args: Array<String>)
 ```
 fun double(x: Int): Int = x * 2
 ```
+## 函数参数和返回值
+### 可变参数
+用vararg表示，就是指任意多个参数，并会以数组的形式来处理这些参数。
+```
+// 可变参数
+fun <T> asList(vararg ts: T): List<T>
+{
+    var result = ArrayList<T>()
+    for (t in ts){
+        result.add(t)
+    }
+    return result
+    // Array<out T>
+}
+
+
+fun main(args: Array<String>)
+{
+    // 由于ts是可变参数，因此可以传递任意多个参数值，并且可以使任意类型的
+    var list =  asList(1, 2, "a", 2.1)
+    println(list)
+}
+```
+
+## 函数的范围
