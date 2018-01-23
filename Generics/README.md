@@ -51,6 +51,21 @@ fun demo(x: Comparable<Number>){
 ## 类型投射（type projection）
 将类型参数T声明为out非常方便，并且能避免使用处子类型化的麻烦，但是有些类实际上不能限制为止返回T。
 ## 星号投射
+有些时候，你可能想表示你并不知道类型参数的任何信息，但是仍然希望能安全的使用它。这里所谓“安全使用”是指，对泛型定义一个类型投射，要求这个泛型类型的所有的实体实例，都是这个投射的子类型。
+```
+// 星号投射
+/*
+如果定义为Foo<out T>，其中T是一个变异类型参数，上界为TUpper，那么Foo<*>等价于F<out TUpper>
+如果定义为Fpp<in T>，Foo<*>等价于Foo<in nothing>。它表示当，当T未知时，你不能安全的向Foo<*>写入任何东西
+ */
+```
+如果一个泛型类型中存在多个类型参数，那么每个类型参数都可以单独投射。
+如果类型定义为`interface Function<in T, out U>`那么可以出现以下几种型号投射：
+```
+Function<*, String>，表示为Function<in nothing, out String>
+Function<Int, *>，表示为Function<Int, out Any?>
+Function<*, *>，表示为Function<in nothing, out Any?>
+```
 ## 泛型函数
 ## 泛型约束
 ## 小结
