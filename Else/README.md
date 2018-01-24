@@ -178,6 +178,19 @@ val a: String = null  // 编译错误
     var b: String? = null
     val len = b?.length  // output is null
 ```
+### Elvis操作符
+假设我们有一个可为null得引用r，我们可以认为：“如果r不为null，那么就使用它，否则，就使用某个非null的值x”
+Elvis操作符的表示形式是?:
+```
+// null test
+    var b: String? = null
+    val len = b?.length ?: -1
+```
+## !!操作符
+对于NPE的热爱者来说，还有另外的解决方案。我们可以写b!!，对于b不为null的情况，这个表达式将会返回这个非null的值，如果b是null，这个表达式将抛出NPE。
+```
+val len = b!!.length
+```
 ## 异常类
 ## 注解（Annotation）
 ## 反射（Reflection）
