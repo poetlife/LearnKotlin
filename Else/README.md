@@ -100,6 +100,28 @@ for (i in 2 until 10)  // 左闭右开
 + reversed
 + step
 ## 类型检查与类型转换
+Kotlin的类型检查操作符更智能，会自动转换类型。
+
+### is与!is操作符
+如果is表达式满足条件，Kotlin编译器会自动转换is前面的对象到后面的数据类型。
+```
+var obj: Any = "abcd"
+    // 判断obj是否为String类型
+    if (obj is String)
+    {
+        println("obj是字符串")
+        println(obj.length)
+    }
+```
+### 强行类型转换
+如果类型强制转换，而且类型不兼容，类型转换操作符通常会抛出一个异常。因此我们称之为不安全的（unsafe）。在Kotlin中，不安全的类型转换使用中缀操作符as。
+```
+var y: Any = "abcd"
+    val x: Int = y as Int  // 无法转换，抛出异常
+
+    val a: Any? = "abcd"
+    val b: Int? = a as? Int?  // 转换错误但不会抛出异常，b的值是null
+```
 ## this表达式
 ## 相等判断
 ## 操作符重载
