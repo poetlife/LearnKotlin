@@ -215,4 +215,22 @@ annotation class Fancy
 @MustBeDocumented
 annotation class MyAnnotationClass
 ```
+### 使用注解
+注解可以在类、函数、函数参数和函数返回值中使用
+```
+@Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION,
+        AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.EXPRESSION)
+@Retention(AnnotationRetention.SOURCE)
+@MustBeDocumented
+annotation class MyAnnotationClass
+
+// 使用注解
+@MyAnnotationClass class Foo
+{
+    @MyAnnotationClass fun baz(@MyAnnotationClass foo: Int): Int
+    {
+        return (@MyAnnotationClass 1)
+    }
+}
+```
 ## 反射（Reflection）
