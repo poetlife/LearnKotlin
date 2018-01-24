@@ -61,6 +61,32 @@ public interface List<out E>: Collection<E>
 对于可读写的集合，可以通过**toXxx函数**将其转化为只读的版本，其中Xxx是List、Set和Map。
 
 ## 值范围
+### 值范围的应用
+值范围表达是使用rangeTo函数实现，该函数的操作符形式是两个点（..），另外还有两个相关操作符in和!in。任何可比较大小的数据类型（comparable type）都可以定义值范，但是对整数基本类型有个特殊优化：
+```
+// range
+    var n = 20
+    if (n in 1..100)
+    {
+        println("满足要求")
+    }
+    if (n !in 30 .. 80)
+    {
+        println("符合条件")
+    }
+```
+而对于整数的值范围，可以对这些值范围进行遍历。编译器会负责将这些代码变换为java中基于下标的for循环，不会产生不必要的性能损耗。
+```
+for (i in 1..10 step 2)  // 相当于for (int i = 1; i <= 10; i++)
+    {
+        println(i*i)
+    }
+    // 倒序输出
+    for (i in 10 downTo 1)
+    {
+        println(i*i)
+    }
+```
 ## 类型检查与类型转换
 ## this表达式
 ## 相等判断
