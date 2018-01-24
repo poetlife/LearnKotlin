@@ -199,4 +199,20 @@ throw MyException("hi there!")
 ```
 使用try来捕获异常。
 ## 注解（Annotation）
+注解是用来为代码添加元数据（metadata）的一种手段，要声明一个注解，需要在类之前添加annotation修饰符。
+```
+annotation class Fancy
+```
+注解的其他属性，可以通过向注解类添加元注解（meta-annotation）的方式来指定。
++ @Target
++ @Retention
++ @Repeatable
++ @MustBeDocumented
+```
+@Target(AnnotationTarget.ANNOTATION_CLASS, AnnotationTarget.FUNCTION,
+        AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.EXPRESSION)
+@Retention(AnnotationRetention.SOURCE)
+@MustBeDocumented
+annotation class MyAnnotationClass
+```
 ## 反射（Reflection）
