@@ -123,6 +123,27 @@ var y: Any = "abcd"
     val b: Int? = a as? Int?  // 转换错误但不会抛出异常，b的值是null
 ```
 ## this表达式
+为了表示当前函数的接收者（receiver），可以使用this表达式。
+在类的成员函数中，this指向这个类的当前对象实例。
+在扩展函数中，或者带接收者的函数字面值（function literal）中，this代表调用函数时，在点号左侧传递的接收者参数。
+```
+class A {  // 隐含标签@A
+    inner class B {  // 隐含标签@B  
+        fun Int.foo(){  // 隐含标签 @foo
+            val a = this@A  // 指向A的this
+            val b = this@B  // 指向B的this
+            
+            val c = this  // 指向foo函数的接受者，一个Int值
+            val c1 = this@foo  // 指向foo函数的接受者，一个Int值
+            
+            val funLit = lambda@ fun String.(){
+                val d = this  // 指向foo()函数的接受者
+            }
+        }
+    }
+    
+}
+```
 ## 相等判断
 ## 操作符重载
 
