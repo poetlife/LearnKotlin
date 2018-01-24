@@ -237,3 +237,4 @@ annotation class MyAnnotationClass
 ### lambda表达式
 
 ## 反射（Reflection）
+反射是Java、C#这样的基于虚拟机的编程语言都有的功能，通过反射，可以在运行时获取对象的元数据。例如可以获取对象对应的类，对象中的属性、方法等。
