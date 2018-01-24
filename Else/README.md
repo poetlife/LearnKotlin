@@ -192,5 +192,10 @@ Elvis操作符的表示形式是?:
 val len = b!!.length
 ```
 ## 异常类
+Kotlin中所有异常类都是Throwable的子类。每个异常都带有一个错误消息，调用堆栈，以及可选的错误原因。
+要抛出异常，可以使用throw表达式。
+```
+throw MyException("hi there!")
+```
 ## 注解（Annotation）
 ## 反射（Reflection）
