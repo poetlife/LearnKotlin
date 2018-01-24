@@ -94,6 +94,11 @@ for (i in 2 until 10)  // 左闭右开
         println(i)
     }
 ```
+### 常用的工具函数
++ rangeTo
++ downTo
++ reversed
++ step
 ## 类型检查与类型转换
 ## this表达式
 ## 相等判断
