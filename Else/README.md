@@ -197,5 +197,6 @@ Kotlin中所有异常类都是Throwable的子类。每个异常都带有一个�
 ```
 throw MyException("hi there!")
 ```
+使用try来捕获异常。
 ## 注解（Annotation）
 ## 反射（Reflection）
