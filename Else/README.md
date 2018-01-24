@@ -151,9 +151,33 @@ class A {  // 隐含标签@A
 引用相等，使用`===`
 结构相等，使用`==`
 
-## 操作符重载
+## 操作符重载（remain unsolved）
 Kotlin允许我们对数据类型的一组预定义的操作符提供实现函数。用于实现操作符重载的函数应该使用operator修饰符进行标记。
 ## null值安全性
+在Java中，用户经常饱受NPE的干扰，而在Kotlin中尽量避免null异常带来的麻烦。
+### 可为null类型和不可为null类型
++ 可为null引用
+```
+val a: String? = null
+```
++ 不可为null引用
+```
+val a: String = null  // 编译错误
+```
+### 在条件语句中进行null检查
+在上面中，由于a是不安全的，因此访问a的属性时kotlin不会让编译通过，但如果非得访问到话就需要做null检查。
+```
+    // null test
+    var b: String? = "abc"
+    
+    val len = if (b != null) b.length else -1
+```
+### 安全调用操作符
+使用安全调用操作符“?”
+```
+    var b: String? = null
+    val len = b?.length  // output is null
+```
 ## 异常类
 ## 注解（Annotation）
 ## 反射（Reflection）
