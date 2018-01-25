@@ -140,7 +140,7 @@ Kotlin代码：
     }
 ```
 ### 为隐式Intent设置更多的过滤条件
-
+还有第三个过滤机制：就是<Data>标签，实际上，通过<data>标签，可以将一个[Uri](https://baike.baidu.com/item/URI/2901761?fr=aladdin)分成不同部分指定。
 ### 使用隐式Intent访问系统APP
 
 ## 向Activity中传递数据
