@@ -141,6 +141,11 @@ Kotlin代码：
 ```
 ### 为隐式Intent设置更多的过滤条件
 还有第三个过滤机制：就是<Data>标签，实际上，通过<data>标签，可以将一个[Uri](https://baike.baidu.com/item/URI/2901761?fr=aladdin)分成不同部分指定。
++ android:scheme: 用于指定Uri协议部分，如http、https、ftp等
++ android:host: 用于指定Uri的主机名部分
++ android:port: 用于指定Uri的端口部分
++ android:path: 用于指定主机名
++ android:mimeType:    
 ### 使用隐式Intent访问系统APP
 
 ## 向Activity中传递数据
