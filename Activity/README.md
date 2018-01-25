@@ -84,6 +84,7 @@ fun onClickToast(view: View){
         finish()
     }
 ```
+如果一个APP只有一个Activity，当关闭这个Activity时，这个APP就关闭了。
 ## 使用Intent连接多个Activity
 
 ## 向Activity中传递数据
