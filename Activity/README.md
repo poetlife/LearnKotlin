@@ -71,8 +71,19 @@ class MyActivity: AppCompatActivity()
 }
 ```
 ### 为Activity添加Toast
-
+```
+fun onClickToast(view: View){
+        // edittext with ?
+        Toast.makeText(this, edittext?.text, Toast.LENGTH_LONG ).show()
+    }
+```
 ### 关闭Activity
+```
+// 关闭Activity
+    fun onClickClose(view: View){
+        finish()
+    }
+```
 ## 使用Intent连接多个Activity
 
 ## 向Activity中传递数据
