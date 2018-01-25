@@ -55,7 +55,21 @@ setContentView(R.layout.my_activity)  // 装载的布局文件
         android:layout_height="wrap_content" />
 ```
 ### 为Activity添加逻辑代码
-
+```
+class MyActivity: AppCompatActivity()
+{
+    // 声明一个edittext类型的变量
+    var edittext: EditText? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.my_activity)
+        edittext = findViewById(R.id.edittext)
+    }
+    fun onClick(view: View){
+        edittext?.setText("I love uozoyo forever!")
+    }
+}
+```
 ### 为Activity添加Toast
 
 ### 关闭Activity
