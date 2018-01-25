@@ -86,6 +86,14 @@ fun onClickToast(view: View){
 ```
 如果一个APP只有一个Activity，当关闭这个Activity时，这个APP就关闭了。
 ## 使用Intent连接多个Activity
+一般一个APP都不会还有一个Activity，如果包含了多个Activity，那么就会涉及这些Activity之间的交互。
+### 使用显示Intent
+
+### 使用隐式Intent
+
+### 为隐式Intent设置更多的过滤条件
+
+### 使用隐式Intent访问系统APP
 
 ## 向Activity中传递数据
 
