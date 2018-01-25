@@ -120,6 +120,16 @@ class SecondActivity : AppCompatActivity() {
 ### 使用隐式Intent
 使用隐式Intent方式显示Activity，需要将Activity与action、catagory等绑定。这里的action和catagory可以是任意字符串。在创建Intent对象时，需要指定与Activity绑定的action、catagory等信息。
 为Activity指定action、catagory等信息，需要在<activity>标签中指定<intent-filter>子标签，并在该子标签中定义一个<action>和一个<catagory>标签。
+`Androidmanifest.xml`配置
+```
+<activity android:name=".SecondActivity" android:label="Uozoyo2">
+     <intent-filter>
+          <action android:name="com.jakie.peng.SECOND_ACTIVITY"></action>
+          <category android:name="android.intent.category.DEFAULT"></category>
+     </intent-filter>
+</activity>    
+```
+其中，Action标签中的name可以是任意值，但是Catagory里面的name属性是系统内置的。
 ### 为隐式Intent设置更多的过滤条件
 
 ### 使用隐式Intent访问系统APP
