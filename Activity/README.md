@@ -88,7 +88,35 @@ fun onClickToast(view: View){
 ## 使用Intent连接多个Activity
 一般一个APP都不会还有一个Activity，如果包含了多个Activity，那么就会涉及这些Activity之间的交互。
 ### 使用显示Intent
+main_activity
+```
+// second activity
+    fun onClickShowSecondActivity(view: View){
+        // SecondActivity:: class.java用于获取SecondActivity中的Java类的元数据
+        var intent = Intent(this, SecondActivity::class.java)
+        // 第二个参数是要显示Activity的class（Activity的元数据）
+        startActivity(intent)
+    }
+```
+activity_second
+```
+package com.peng.jakie.uozoyo
 
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+
+class SecondActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_second)
+    }
+    open fun onClickClose(view: View){
+        finish()
+    }
+}
+```
 ### 使用隐式Intent
 
 ### 为隐式Intent设置更多的过滤条件
