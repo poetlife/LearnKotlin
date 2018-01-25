@@ -37,11 +37,23 @@ setContentView(R.layout.my_activity)  // 装载的布局文件
         // 在Android中，所有资源文件都必须使用R.layout.XXX形式引用，其中XXX为资源名，不包括扩展名
 ```
 ### 在AndroidManifest文件中注册Activity
-
+```
+<activity android:name=".New" android:label="我的窗口">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+</activity>
+```
 ### 编译和运行Android工程
-
+使用了ADB连接了我自己的手机。
 ### 为Activity添加新组件
-
+```
+<EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+```
 ### 为Activity添加逻辑代码
 
 ### 为Activity添加Toast
