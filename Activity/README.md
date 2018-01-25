@@ -144,10 +144,10 @@ Kotlin代码：
 + android:scheme: 用于指定Uri协议部分，如http、https、ftp等
 + android:host: 用于指定Uri的主机名部分
 + android:port: 用于指定Uri的端口部分
-+ android:path: 用于指定主机名
-+ android:mimeType:    
++ android:path: 用于指定主机名和端口名之后的部分
++ android:mimeType: 用于制定可以处理的数据类型：如image/png、application/pdf等   
 ### 使用隐式Intent访问系统APP
-
+基本上就是打开特定的一些窗口。
 ## 向Activity中传递数据
 
 ## 从Activity中返回数据
