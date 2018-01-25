@@ -130,6 +130,15 @@ class SecondActivity : AppCompatActivity() {
 </activity>    
 ```
 其中，Action标签中的name可以是任意值，但是Catagory里面的name属性是系统内置的。
+Kotlin代码：
+```
+    // second activity 隐式
+    fun onClickShowSecondActivity(view: View){
+        // 通过Intent的构造器指定Action
+        var intent = Intent("com.jakie.peng.SECOND_ACTIVITY")
+        startActivity(intent)
+    }
+```
 ### 为隐式Intent设置更多的过滤条件
 
 ### 使用隐式Intent访问系统APP
