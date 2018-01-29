@@ -7,8 +7,16 @@ Gradle是一个基于Groovy的自动化构建的工具。在AS中，它被作为
 1. 编译器将你的源码编译成DEX(Dalvik Executable)文件，这个文件中包含了在安卓设备上运行的二进制文件和其他的一些编译了的文件。
 2. APk 打包器将DEX文件和编译的资源文件整合到一个apk文件中去，在你的APP能被装到安卓设备上，你需要对你的ApK文件签名。
 3. 签名
-4. The packager uses the zipalign tool to optimize your app to use less memory when running on a device/
+4. The packager uses the zipalign tool to optimize your app to use less memory when running on a device.
 
 ## Custom Build Configurations
+Gradle and the Android plugin help you configure the following aspects of your build:
++ Build Types
+[how to configure bulid types](https://developer.android.com/studio/build/build-variants.html#build-types)
++ Product Flavors
+你可以在这里展示不同版本，比如说免费版本和付费版本，这个需要手动设置。
+[how to configure product flavors](https://developer.android.com/studio/build/build-variants.html#product-flavors)
++ Build Variants
+
 
 ## Build Configuration Files
