@@ -33,3 +33,12 @@ The build system enables you to specify a different [ProGuard](https://developer
 The build system enables you to automatically build different APKs that each contain only the code and resources needed for a specific screen density or Application Binary Interface.
 [Build Multiple APKs](https://developer.android.com/studio/build/configure-apk-splits.html)
 ## Build Configuration Files
+Creating custom build configurations requires you to make changes to one or more bulid configuration files, or `build.gradle` files. These plain text files use Domain Specific Language(DSL) to describe and manipulate the build logic using Groovy, which is a dynamic language for the Java Virtual Machine.
+
+![figure 2. The default project structure for an Android app module](https://developer.android.com/images/tools/studio/project-structure_2x.png)
+
+There are a few Gradle build configuration files that are a part of the standard project structure for an Android App.
++ The Gradle Settings File
+tells Gradle which modules it should include when building up your app.
++ The Top-level Build File
+defines bulid configurations that apply to all modules in your project.By default, the top-level build file uses the `buildscript` block to define the Gradle repositories and dependencies that are common to all modules in the project.
