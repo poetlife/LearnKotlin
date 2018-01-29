@@ -17,6 +17,19 @@ Gradle and the Android plugin help you configure the following aspects of your b
 你可以在这里展示不同版本，比如说免费版本和付费版本，这个需要手动设置。
 [how to configure product flavors](https://developer.android.com/studio/build/build-variants.html#product-flavors)
 + Build Variants
-
-
+A build variant is a cross product of a bulid type and product flavor, and is the configuration Gradle uses to build your app.
+[how to configure bulid variants](https://developer.android.com/studio/build/build-variants.html)
++ Manifest Entries
+You can specify values for some properties of the manifest file in the build variant configuration.These bulid values overrides the existing values in manifest file.
+[merges manifest settings]（https://developer.android.com/studio/build/manifest-merge.html）
++ Dependencies
+The bulid system manages project dependencies from your local filesystem adn from the remote repositories.
+[add bulid dependencies](https://developer.android.com/studio/build/dependencies.html)
++ Signing
+The bulid system enables you to specify signing settings in the bulid configuration, and it can automatically sign your APKs during the build process.
++ ProGuard
+The build system enables you to specify a different [ProGuard](https://developer.android.com/studio/build/shrink-code.html) rules file for each bulid variant.
++ Multiple APK Support
+The build system enables you to automatically build different APKs that each contain only the code and resources needed for a specific screen density or Application Binary Interface.
+[Build Multiple APKs](https://developer.android.com/studio/build/configure-apk-splits.html)
 ## Build Configuration Files
