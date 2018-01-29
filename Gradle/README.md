@@ -44,6 +44,37 @@ tells Gradle which modules it should include when building up your app.
 defines bulid configurations that apply to all modules in your project.By default, the top-level build file uses the `buildscript` block to define the Gradle repositories and dependencies that are common to all modules in the project.
 + The Module-level Build File
 allows you to configure build settings for the specific module it is located in.
+```
+apply plugin: 'com.android.application'
+/*
+makes the android block available to specify Android-specific bulid options
+*/
+android {
+  compileSdkVersion 26
+  defaultConfig { 
+    applicationId 'com.example.myapp'
+    minSdkVersion 15
+    targetSdkVersion 26
+    versionCode 1  // version of your app
+    versionName "1.0"  // user-friendly  name
+   }
+ buildTypes {
+    release {}
+    debug {}
+ } 
+ productFlavors{
+    free {
+      applicationId 'com.example.myapp.free'
+    }
+    paid {
+       applicationId 'com.example.myapp.paid'
+    }
+ }
+}
+dependencies {
+    compile project(":lib")
+}
+```
 + Gradle Properties Files
 
 + Syncing Project with Gradle Files
