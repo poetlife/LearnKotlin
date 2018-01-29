@@ -42,3 +42,10 @@ There are a few Gradle build configuration files that are a part of the standard
 tells Gradle which modules it should include when building up your app.
 + The Top-level Build File
 defines bulid configurations that apply to all modules in your project.By default, the top-level build file uses the `buildscript` block to define the Gradle repositories and dependencies that are common to all modules in the project.
++ The Module-level Build File
+allows you to configure build settings for the specific module it is located in.
++ Gradle Properties Files
+
++ Syncing Project with Gradle Files
+
++ Source Sets
