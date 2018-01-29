@@ -23,3 +23,17 @@ class High_order_function{
     val list = listOf(1, 2, 3, 4, 5)
     var a = list.filter(::isOdd)  // :: 表示引用函数
 }
+fun main(args: Array<String>){
+    // main function
+    fun trible(double: (Int)->(Int), x:Int):Int{
+        return x+double(x)
+    }
+
+    fun double(x: Int):Int{
+        return x+x
+    }
+
+    var a = trible(::double, 2)
+    println(a)
+
+}
