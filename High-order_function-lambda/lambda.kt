@@ -9,9 +9,13 @@ package high_order_function
  */
 
 val sum = {x: Int -> {y:Int -> x + y}}
+val subtract = {x:Int, y:Int -> (x-y)}
 
 fun main(args:Array<String>){
     // main function
-    var a = sum(1)(2)
-    println(a)
+    var a = sum(1)(2)  // currying
+    var b = subtract(1, 2)
+    var list = listOf(1, 2, 3, 4, 5)
+    var c = list.map {it *2}
+    println(c)
 }
