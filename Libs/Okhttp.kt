@@ -55,9 +55,24 @@ class AsynchronizationGet(url:String){
         )
     }
 }
+class StreamPost(url: String){
+    // Post
+    val requestBody = FormBody.Builder()
+            .add("name", "Bill")
+            .add("age", "30")
+            .build()
+    val request = Request.Builder()
+            .url(url)
+            .post(requestBody)
+            .build()
+    val client = OkHttpClient()
+    fun connect(){
+        val response = client.newCall(request).execute()
+        println(response.body()?.string())
+    }
+}
 fun main(args: Array<String>){
     // main function
-    val asynchronization = AsynchronizationGet("https://www.baidu.com")
-    asynchronization.connect()
-    println("测试是不是异步执行")
+    val post = StreamPost("https://geekori.com")
+    post.connect()
 }
