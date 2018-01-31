@@ -33,7 +33,23 @@
 2. 语法上的区别。 接口不能保存状态，可以有属性但必须是抽象的。一个类只能继承一个抽象类，而一个类可以实现多个接口。接口中，所有方法隐含都是抽象的。
 3. 设计层面上的区别。 抽象类是对一种事物的抽象，而接口是对行为的抽象。
 4. 实际应用上的区别。 在实际使用中，使用抽象类是一种强耦合的设计，用来描述“A is a B"的关系； 如果你设计中有两个类型的关系不是"is a"而是"is like a"，那么就必须慎重考虑继承。
+### Object对象
+Kotlin中没有”静态属性和方法“，但是提供了object对象。
+匿名对象的使用：
+```
+fun distance(x: Double, y: Double): Double{
+    val porigin = object {
+        var x = 0.0
+        var y = 0.0
+    }
+    return Math.sqrt(Math.pow((x - porigin.x), 2.0) + Math.pow((y - porigin.y), 2.0))
+}
 
+fun main(args: Array<String>){
+    val result = distance(3.0, 4.0)
+    println(result)
+}
+```
 ## 泛型
 
 ## 委托
