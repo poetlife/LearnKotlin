@@ -57,6 +57,58 @@ fun main(args: Array<String>){
 1. 特殊多态。 此类下又包含函数重载以及类型转换多态。
 2. 参数化多态。 即Java里面的泛型。
 3. 子类型多态。 通过类型继承得到的多态。
+### 型变（variant）
+型变有3中基本类型：协变（Covariant）、逆变（Contravariant）和不变（Invariant）。
+**PECS**: producer-extends, consumer-super
+生产者就是我们去读取数据的对象，消费者则是我们写入数据的对象。
+### 类型投射（type projection）
+```
+/*
+类型投射
+ */
+
+class Array<T>(val size:Int){
+    fun get(index: Int): T{}
+    fun set(index: Int, value: T){}
+}
+
+/*
+我们可以看到，T既作为get方法的返回类型，也作为set方法第2个参数的类型，无法进行子类化
+ */
+```
+考虑到如下情况：
+```
+/*
+考虑如下函数
+ */
+
+fun copy(from: Array<Any>, to: Array<Any>){
+    assert(from.size == to.size)
+    for (i in from.indices)
+        to[i] = from[i]
+}
+
+fun main(args: Array<String>){
+    val ints: Array<Int> = arrayOf(1, 2, 3)
+    val any = Array<Any>(3){""}
+    copy(ints,any)  // 错误
+}
+```
+这里我们将遇到同样的问题：Array<T>在T上是不变的，因此Array<Int>和Array<Any>都不是另一个的子类型。那么我们唯一要确保的就是copy()不会做任何坏事。我们阻止它写入from，所以我们修改函数为
+```
+fun copy(from: Array<out Any>, to: Array<Any>){
+    assert(from.size == to.size)
+    for (i in from.indices)
+        to[i] = from[i]
+}
+
+fun main(args: Array<String>){
+    val ints: Array<Int> = arrayOf(1, 2, 3)
+    val any = Array<Any>(3){""}
+    copy(ints,any)  // 错误
+}
+```
+现在这个from就是一个受Array<out Any>限制的（投影的）数组。其主要作用是参数作限定 ，避免不安全操作。
 ## 委托
 
 ## 内联函数
