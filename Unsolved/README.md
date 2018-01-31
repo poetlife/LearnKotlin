@@ -114,6 +114,7 @@ fun main(args: Array<String>){
 ## 内联函数
 
 ## as
+在Kotlin中，不安全的类型转换使用中缀操作符as。
 
 ## 注解与反射
 
