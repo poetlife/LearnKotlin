@@ -122,6 +122,10 @@ class Singleton private constructor()
     + 内部类
     + 对象声明
 ### 类属性
+Kotlin中属性的语法
+var/val <propertyName> [: <PropertyType>] [= <property_initializer>]
+    [<getter>]
+    [<setter>]
 ```
 open class Uozoyo
 {
