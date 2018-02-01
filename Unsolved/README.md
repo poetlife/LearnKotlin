@@ -381,7 +381,12 @@ public class Hello {
         jProxy.request();
     }
 }
-
+/*
+output is:
+JProxy before Requesting
+JRealSubject Requesting
+JProxy after Requesting
+*/
 ```
 ### 类的委托
 ```
@@ -416,6 +421,15 @@ fun main(args: Array<String>){
     val proxySubject = ProxySubject(subject)
     proxySubject.hello()
 }
+/*
+output is:
+Hello, REAL World! Now is Thu Feb 01 21:51:07 CST 2018
+----------------------
+Before! Now is Thu Feb 01 21:51:07 CST 2018
+Hello, REAL World! Now is Thu Feb 01 21:51:07 CST 2018
+After! Now is Thu Feb 01 21:51:07 CST 2018
+
+ */
 ```
 ### 委托属性
 委托属性（Delegated Properties）赋予了属性富有变化的活力。
