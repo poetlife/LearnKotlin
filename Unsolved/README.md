@@ -69,9 +69,57 @@ List元素操作函数
 ```
 List集合类的基本运算函数
 ```
+    /*
+    List类的基本运算函数
+     */
 
+    var mutableList = mutableListOf(1, 2, 3)
+
+    // 1. any() 判断集合至少有一个元素
+    mutableList.any()  // true
+
+    // 2. any(predicate: (T) -> Boolean)  判断集合中过是否有符合条件的元素
+    mutableList.any { it == 2 }  // true
+
+    // 3. all(predicate: (T) -> Boolean)  判断集合中的元素是否都符合条件
+    mutableList.all{ it % 2 == 0 }  // false
+
+    // 4. none()  // 判断集合无元素
+    mutableList.none()  // false
+
+    // 5. none(predicate: (T) -> Boolean)  判断集合中所有元素都不满足条件
+    mutableList.none { it > 4 }  // true
+
+    // 6. count()  计算集合中元素的个数
+    mutableList.count()  // 3
+
+    // 7. count(predicate: (T) -> Boolean)  计算集合中符合条件的元素个数
+    mutableList.count{ it > 1 }  // 2
+
+    // 8. reduce  从第一项到最后一项进行累计计算
+    // reduce(operation: int, int -> ....)
+    mutableList.reduce({sum, next -> sum + next})  // 6
+    mutableList.reduce({sum, next -> sum * next})  // 6
+
+    // 9. reduceRight 从最后一项到第一项进行累计运算
+
+    // 10. fold(initial: R, operation: (acc:R, T) -> R): R
+    // fold 函数给累加子赋了初始值initial。而不是像reduce赋给了第一个值
+    mutableList.fold(100,{sum,next -> sum + next})  // 106
+
+    // 11. foldRight 从最后一项到第一项进行累计运算，并赋予初始值
+
+    // max、 min 返回集合中最大、最小的元素
+    mutableList.max()  // 3
+    mutableList.min()  // 1
+    // kotlin中比较字符串大小比较有意思
+
+    // 12. maxBy(selector: (T) -> R): T?、minBy(selector: (T) -> R): T?
+    mutableList.maxBy { -it*it + 10 }  // 1
 ```
-
+List过滤操作函数
+```
+```
 
 ## 对象，类，抽象类和接口直接的区别与联系
 ### 面向对象的思想
