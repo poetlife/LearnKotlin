@@ -119,8 +119,38 @@ List集合类的基本运算函数
 ```
 List过滤操作函数
 ```
-```
+    /*
+    List过滤操作函数
+     */
 
+    val mutableList = mutableListOf(1, 2, 3, 4, 5)
+    // 1. take(n: Int): List<T>
+    mutableList.take(3)  // [1, 2, 3]
+
+    // 2. takeWhile(predicate:(T) -> Boolean) :List<T>
+    mutableList.takeWhile { it >= 2 }  // [2, 3, 4, 5]
+
+    // 3. takeLast(n: Int)  挑出后n个元素的子集合
+
+    // 4. takeLastWhile(predicate: (T) -> Boolean): List<T>
+
+    // 5. drop(n: Int)  去除前n个元素返回剩下的元素的子集合
+
+    // 6. dropWhile; dropLast; dropLastWhile 同前面
+
+    // 7. slice(indices: IntRange)  即开始下标至结束下标元素子集合
+    mutableList.slice(1..2)  // [2, 3]
+    
+    // 9. slice(indices: Iterable<Int>)  返回指定下标的元素子集合
+    mutableList.slice(listOf(1, 2))  // [2, 3]
+    
+    // 10. filterTo(destination: C, predicate: (T) -> Boolean)  过滤出满足条件的元素并赋值给destination
+    val dest = mutableListOf<Int>()
+    mutableList.filterTo(dest, {it != 2})  // dest = [1, 3, 4, 5]
+```
+List映射操作函数
+```
+```
 ## 对象，类，抽象类和接口直接的区别与联系
 ### 面向对象的思想
 1. 一切皆为映射
