@@ -150,6 +150,31 @@ List过滤操作函数
 ```
 List映射操作函数
 ```
+    /*
+    映射操作函数
+     */
+    val mutableList = mutableListOf(1, 2, 3, 4, 5)
+
+    // 1. map(transform: (T) -> R): List<R>  将集合中的元素通过转换函数transform映射后的结果，存到一个集合中并返回
+    mutableList.map { it * it }  // [1, 4, 9, 16, 25]
+
+    // 2. mapIndexed(transform: (kotlin. Int, T) -> R)  转换函数transform中带有下标参数
+    mutableList.mapIndexed({index, it -> index*it})  // [0, 2, 6, 12, 20]
+
+    // 3. mapNotNull(transform: (T)->R?)  返回一个无null值的集合
+
+    // 4. flatMap(transform: (T) -> Iterable<R>): List<R>  在原始集合上的每个元素上调用transform转换函数，得到的映射组成的单个列表
+    mutableList.flatMap { it -> listOf(it, it + 1) }  // [1, 2, 2, 3, 3, 4, 4, 5, 5, 6]
+    mutableList.map { it -> listOf(it, it + 1) }  // [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]
+```
+List分组操作函数
+```
+```
+List排序操作符
+```
+```
+List生产操作符
+```
 ```
 ## 对象，类，抽象类和接口直接的区别与联系
 ### 面向对象的思想
