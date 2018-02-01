@@ -169,6 +169,20 @@ List映射操作函数
 ```
 List分组操作函数
 ```
+    /*
+    分组操作函数
+     */
+
+    val mutableList = mutableListOf<String>("ab", "bvd", "fasd", "dfas", "ad")
+
+    // 1. groupBy(keySelector: (T) -> K): Map<K, List<T>>
+    // 将集合中的元素按照条件选择器分组，并返回Map
+    mutableList.groupBy { it.length }  // {2=[ab, ad], 3=[bvd], 4=[fasd, dfas]}
+
+    // 2. groupingBy(crossinline keySelector: (T) -> K): Grouping<T, K>
+    // 可以使用eachCount统计分组
+    val words = "one two three four five six seven eight nine ten".split(" ")
+    words.groupingBy { it.first() }.eachCount()  // {o=1, t=3, f=2, s=2, e=1, n=1}
 ```
 List排序操作符
 ```
