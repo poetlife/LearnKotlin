@@ -337,6 +337,53 @@ fun main(args: Array<String>){
 代理模式（proxy pattern）也称为委托模式。在代理模式中，有两个对象参与处理同一个请求，接受请求的对象将请求委托（delegation）给另一个对象来处理。
 代理模式使得我们可以用聚合来替代继承，它还使我们可以模拟mixin（混合类型）。委托模式的作用是将委托者与实际实现代码分离开来，以达到[解耦](https://baike.baidu.com/item/解耦/8592042?fr=aladdin)的目的。
 ### 类的委托
+java:
+```
+interface JSubject{
+    public void request();
+}
+
+class JRealSubject implements JSubject{
+    @Override
+    public void request() {
+        System.out.println("JRealSubject Requesting");
+    }
+}
+
+class JProxy implements JSubject{
+    private JSubject subject = null;
+
+    // 通过构造函数传递代理者
+    public JProxy(JSubject sub){
+        this.subject = sub;
+    }
+
+    @Override
+    public void request(){
+        // 实现接口中定义的方法
+        this.before();
+        this.subject.request();
+        this.after();
+    }
+
+    public void before(){
+        System.out.println("JProxy before Requesting");
+    }
+
+    public void after(){
+        System.out.println("JProxy after Requesting");
+    }
+}
+
+public class Hello {
+    public void main(String[] args){
+        JRealSubject jRealSubject = new JRealSubject();
+        JProxy jProxy = new JProxy(jRealSubject);
+        jProxy.request();
+    }
+}
+
+```
 ### 委托属性
 
 ## 内联函数
