@@ -31,11 +31,9 @@ Kotlin中提供了不可变集合类与可变集合类。
 
     list.forEach(::println)  // ::是函数引用符
     list.forEach { println(it) }
-
-    /*
-    some extra methods to manipulate the list
-     */
-
+```
+List元素操作函数
+```
     val mutableList = mutableListOf(1, 2, 3)
 
     // 1. add/remove operation
@@ -52,7 +50,28 @@ Kotlin中提供了不可变集合类与可变集合类。
     mutableList.set(0, 100)  // 将下标为0的元素设置为100
     mutableList.clear()  // 清空集合
     mutableList.toList()  // 将可变集合转变为不可变集合
+    
+    // 3. retainAll
+    val mlist1 = mutableListOf(1, 2, 4)
+    val mlist2 = mutableListOf(1, 2, 3)
+    mlist1.retainAll(mlist2)  // 取交集
+
+    // 4. contains
+    mlist1.contains(1)  // 判断集合中是否有指定元素
+
+    // 5. elementAt
+    mlist1.elementAt(1)  // 查找下标是1的元素
+
+    // 6. last(predicate: (T) -> Boolean)
+    var list = listOf(1, 2, 3)
+    list.last { it == 3 }  // 返回符合条件的最后一个元素，没有的话就抛出异常
+    
 ```
+List集合类的基本运算函数
+```
+
+```
+
 
 ## 对象，类，抽象类和接口直接的区别与联系
 ### 面向对象的思想
