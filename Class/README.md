@@ -100,6 +100,20 @@ public class Hello {
     }
 }
 ```
+kotlin
+```
+
+class Singleton private constructor()
+{
+    public var value: Singleton? = null
+    private object mHolder { val INSTANCE = Singleton()}
+    companion object Factory {
+        fun getInstance(): Singleton{
+            return mHolder.INSTANCE
+        }
+    }
+}
+```
 ## 类成员
 类可以包含：
     + 构造函数和初始化代码块
