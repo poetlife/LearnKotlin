@@ -186,6 +186,20 @@ List分组操作函数
 ```
 List排序操作符
 ```
+    /*
+    排序操作符
+     */
+
+    val mutableList = mutableListOf<Int>(1, 2, 3, 4, 5)
+
+    // 1. reversed(): List<T>  倒序排列集合元素
+    mutableList.reversed()  // [5, 4, 3, 2, 1]
+
+    // 2. sorted sortedDescending  升/降序排列
+
+    // 3. sortedBy sortedDescendingBy  根据函数映射的结果进行升降序排列
+    val words = "one two three four five six seven eight nine ten".split(" ")
+    words.sortedBy { it.length }  // [one, two, six, ten, four, five, nine, three, seven, eight]
 ```
 List生产操作符
 ```
