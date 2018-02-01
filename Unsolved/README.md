@@ -384,6 +384,39 @@ public class Hello {
 
 ```
 ### 类的委托
+```
+/*
+类的委托
+ */
+
+interface Subject{
+    fun hello(){}
+}
+
+class RealSubject(val name: String): Subject{
+    override fun hello() {
+        val now = Date()
+        println("Hello, REAL $name! Now is $now")
+    }
+}
+
+class ProxySubject(val sb: Subject): Subject by sb{
+    // ProxySubject的超类型Subject中的by sb将会在ProxySubject中内部储存。然后我们再覆盖率了函数
+    override fun hello() {
+        println("Before! Now is ${Date()}")
+        sb.hello()
+        println("After! Now is ${Date()}")
+    }
+}
+
+fun main(args: Array<String>){
+    val subject = RealSubject("World")
+    subject.hello()
+    println("----------------------")
+    val proxySubject = ProxySubject(subject)
+    proxySubject.hello()
+}
+```
 ### 委托属性
 
 ## 内联函数
