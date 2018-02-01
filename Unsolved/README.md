@@ -437,6 +437,44 @@ After! Now is Thu Feb 01 21:51:07 CST 2018
 ＋ 可观察属性（observable properities）：监听器会收到有关此属性变更的通知
 ＋ 可把多个属性储存在一个映射中，而不是存在单独的字段中
 
+```
+/*
+委托属性
+ */
+
+class Delegate{
+    operator fun getValue(thisRef: Any?, property: KProperty<*>): String{
+        return "${thisRef}, thank you for delegating '${property.name}' to me!"
+    }
+
+    operator fun setValue(thisRef: Any?, property: KProperty<*>, value: String){
+        println("$value has been assigned to '${property.name}' in ${thisRef}!")
+    }
+}
+
+class Example{
+    var p: String by Delegate()
+}
+
+```
+### 延迟属性Lazy
+lazy()是接受一个lambda并返回一个Lazy<T>实例的函数，返回的实例可以作为实例延迟属性的委托：第一次调用get（）会执行已传递给lazy（）的lambda表达式并记录结果，后续调用get（）只返回记录的结果。
+```
+    val lazyValue: String by lazy {
+    println("computer")
+    "hello"
+}
+
+fun main(args: Array<String>){
+    println(lazyValue)  // computer \n hello
+    println(lazyValue)  // hello
+}
+    ```
+    
+### 可观察属性
+
+### 把属性储存在映射中
+
 ## 内联函数
 
 ## as
