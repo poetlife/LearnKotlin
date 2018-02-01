@@ -469,7 +469,7 @@ fun main(args: Array<String>){
     println(lazyValue)  // computer \n hello
     println(lazyValue)  // hello
 }
-    ```
+```
     
 ### 可观察属性
 
