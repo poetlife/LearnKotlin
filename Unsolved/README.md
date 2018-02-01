@@ -418,6 +418,10 @@ fun main(args: Array<String>){
 }
 ```
 ### 委托属性
+委托属性（Delegated Properties）赋予了属性富有变化的活力。
+＋ 延迟属性（Lazy properities）：其值只有在首次访问时计算
+＋ 可观察属性（observable properities）：监听器会收到有关此属性变更的通知
+＋ 可把多个属性储存在一个映射中，而不是存在单独的字段中
 
 ## 内联函数
 
