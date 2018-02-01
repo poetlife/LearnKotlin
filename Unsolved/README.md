@@ -203,6 +203,24 @@ List排序操作符
 ```
 List生产操作符
 ```
+    /*
+    生产操作符
+     */
+
+    val list1 = listOf<Int>(1, 2, 3)
+    val list2 = listOf<String>("a", "b", "c")
+
+    // 1. zip(other: Iterable<R>): List<Pair<T, R>>  两个集合按照下标配对，组合成的Pair作为新的List集合中的元素
+    list1.zip(list2)  // [(1, a), (2, b), (3, c)]
+    // 如果两个集合长度不一样，取短的
+
+    // 2. partition(predicate: (T) -> Boolean): Pair<List<T>, List<T>>  根据判断条件是否成立，将集合拆分成两个子集组成的Pair
+    val list = listOf<Int>(1, 3, 5, 7, 9)
+    list.partition { it>5 }  // ([7, 9], [1, 3, 5])
+
+    // 3. plus(elements: Iterable<T>): List<T>  合并两个List，可以用+替代
+    
+    // 4. plusElement 在集合中添加一个元素
 ```
 ## 对象，类，抽象类和接口直接的区别与联系
 ### 面向对象的思想
