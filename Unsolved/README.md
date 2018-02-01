@@ -9,7 +9,50 @@ Kotlin中提供了不可变集合类与可变集合类。
 > 有人想要有序的数组，于是有了TreeSet、TreeList
 > 有人想要通过复杂对象来查找另一个对象的关联数组于是有了Map
 
+### List
+```
+    /*
+    some methods of List
+     */
+    var list = listOf<Int>(1, 2, 3)
+    /*
+    some methods to iterate the elements of list
+     */
 
+    // 1. iterator
+
+    var iter = list.iterator()
+    // get the element
+    println(iter.next())
+    // judge the iterator exist or not an element
+    println(iter.hasNext())
+
+    // 2. forEach
+
+    list.forEach(::println)  // ::是函数引用符
+    list.forEach { println(it) }
+
+    /*
+    some extra methods to manipulate the list
+     */
+
+    val mutableList = mutableListOf(1, 2, 3)
+
+    // 1. add/remove operation
+
+    mutableList.add(4)
+    mutableList.add(0, 0)  // 在下标为0的位置添加元素0
+    mutableList.remove(1)  // 删除元素1
+    mutableList.removeAt(1)  // 删除下标为1的元素
+    mutableList.removeAll(listOf(3, 4))  // 删除子集合
+    mutableList.addAll(listOf(1, 3, 4))  // 添加子集合
+
+    // 2. set/clear operation
+
+    mutableList.set(0, 100)  // 将下标为0的元素设置为100
+    mutableList.clear()  // 清空集合
+    mutableList.toList()  // 将可变集合转变为不可变集合
+```
 
 ## 对象，类，抽象类和接口直接的区别与联系
 ### 面向对象的思想
