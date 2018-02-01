@@ -79,7 +79,27 @@ Output
 ```
 ### Kotlin中的Singleton
 singleton模式又被称为单例模式，是一种常见的软件设计模式，通过单例模式可以保证系统中一个类只有一个实例。
+java:
+```
+class Singleton {
+    private static Singleton instance;  // 声明一个私有静态变量
 
+    private Singleton() {}  // 私有构造函数，使得无法在外部声明一个对象
+
+    public static Singleton getInstance(){
+        if (instance == null){
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+
+public class Hello {
+    public static void main(String[] args){
+        Singleton singleton = new Singleton();  // error
+    }
+}
+```
 ## 类成员
 类可以包含：
     + 构造函数和初始化代码块
