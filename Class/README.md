@@ -115,12 +115,14 @@ class Singleton private constructor()
 }
 ```
 ## 类成员
-类可以包含：
-    + 构造函数和初始化代码块
-    + 函数
-    + 属性
-    + 内部类
-    + 对象声明
+类可以包含：  
+
++ 构造函数和初始化代码块  
++ 函数  
++ 属性  
++ 内部类  
++ 对象声明  
+
 ### 类属性
 Kotlin中属性的语法
 var/val \<propertyName> \[: \<PropertyType>] \[= \<property_initializer>]  
