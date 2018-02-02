@@ -476,7 +476,29 @@ fun main(args: Array<String>){
 ### 把属性储存在映射中
 
 ## 内联函数
+未使用inline的kotlin代码：
+```
+fun processProduct(area: (name: String) -> String): String{
+    return area("iPhone")
+}
 
+fun main(args: Array<String>){
+    println(processProduct { name -> "$name 美国" })
+}
+```
+对于这种调用方式，kotlin编译器会为lambda表达式单独创建一个对象，然后将lambda表达式转换为相应的函数并调用，这样做是非常消耗资源的。
+使用inline的kotlin代码：
+```
+inline fun processProduct(area: (name: String) -> String): String{
+    return area("iPhone")
+}
+
+fun main(args: Array<String>){
+    println(processProduct { name -> "$name 美国" })
+}
+```
+通过使用`inline`关键字，Kotlin编译器将Lambda表达式直接放到了main函数，这就成为函数的内联。  
+需要注意的是，要内联的函数带的Lambda不宜过大，否则会造成生成的.class文件尺寸过大。把函数内联进其他函数，相当于在每一个调用的地方都复制一次，尽管这是自动完成的，但如果每一个内联的Lambda表达式都比较大，而且类似的情况比较多的话，会大大增加生成的.class文件的尺寸。
 ## as
 在Kotlin中，不安全的类型转换使用中缀操作符as。
 
