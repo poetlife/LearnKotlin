@@ -74,3 +74,42 @@ MD5算法具有以下特点：
 5、强抗碰撞：想找到两个不同的数据，使它们具有相同的MD5值，是非常困难的。  
 MD5的作用是让大容量信息在用数字签名软件签署私人密钥前被”压缩”成一种保密的格式（就是把一个任意长度的字节串变换成一定长的十六进制数字串）。除了MD5以外，其中比较有名的还有sha-1、RIPEMD以及Haval等。  
 
+## sha
+安全哈希算法（Secure Hash Algorithm）主要适用于数字签名标准（Digital Signature Standard DSS）里面定义的数字签名算法（Digital Signature Algorithm DSA）。对于长度小于2^64位的消息，SHA1会产生一个160位的消息摘要。该算法经过加密专家多年来的发展和改进已日益完善，并被广泛使用。该算法的思想是接收一段明文，然后以一种不可逆的方式将它转换成一段（通常更小）密文，也可以简单的理解为取一串输入码（称为预映射或信息），并把它们转化为长度较短、位数固定的输出序列即散列值（也称为信息摘要或信息认证代码）的过程。散列函数值可以说是对明文的一种"指纹"或是"摘要"所以对散列值的数字签名就可以视为对此明文的数字签名。
+```
+package encryto
+
+import java.math.BigInteger
+import java.security.MessageDigest
+
+/*
+MD5(Message Digest algorithm 5，信息摘要算法)
+通常我们不直接使用上述MD5加密。通常将MD5产生的字节数组交给BASE64再加密一把，得到相应的字符串
+Digest:汇编
+*/
+
+class SHA{
+    companion object {
+        val KEY_SHA = "SHA"
+        fun getResult(inputStr: String){
+            // output the original data
+            println("加密前数据为：${inputStr}")
+            var bigInteger: BigInteger
+
+            try {
+                var sha = MessageDigest.getInstance(KEY_SHA)
+                sha.update(inputStr.toByteArray())
+                bigInteger = BigInteger(sha.digest())
+                println("加密后数据为：${bigInteger.toString(32)}")
+            } catch (e: Exception){
+                println(e.message)}
+        }
+    }
+}
+
+fun main(args: Array<String>){
+    // main function
+    val string_test = "Uozoyo, love you forever"
+    SHA.Companion.getResult(string_test)
+}
+```
