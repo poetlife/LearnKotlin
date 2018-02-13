@@ -52,3 +52,6 @@ public actual fun launch(  // actual是为多平台支持
 }
 ```
 易知launch有4个参数，其中block是协程真正要执行的代码块，必须是suspend修饰的挂起函数。
+
+### CommonPool对象
+    
