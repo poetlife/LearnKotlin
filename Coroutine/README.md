@@ -21,3 +21,34 @@ dependencies {
 ```
 此依赖项使用的Kotlin版本为：`1.2.21`。
 更多配置信息，参见[Kotlin-coroutines-cores Github](https://github.com/Kotlin/kotlinx.coroutines#gradle)
+
+### 简单的协程示例
+```
+fun firstCoroutineDemo(){
+    launch(CommonPool) {
+        delay(3000L, TimeUnit.MILLISECONDS)
+        println("Hello, ")
+    }
+    println("World!")
+    Thread.sleep(5000L)
+}
+```
+
+### 使用launch函数启动协程
+launch函数的定义如下：
+```
+public actual fun launch(  // actual是为多平台支持
+    context: CoroutineContext = DefaultDispatcher,
+    start: CoroutineStart = CoroutineStart.DEFAULT,
+    parent: Job? = null,
+    block: suspend CoroutineScope.() -> Unit  // 挂起函数
+): Job {
+    val newContext = newCoroutineContext(context, parent)
+    val coroutine = if (start.isLazy)
+        LazyStandaloneCoroutine(newContext, block) else
+        StandaloneCoroutine(newContext, active = true)
+    coroutine.start(start, coroutine, block)
+    return coroutine
+}
+```
+易知launch有4个参数，其中
