@@ -20,4 +20,4 @@ dependencies {
 }
 ```
 此依赖项使用的Kotlin版本为：`1.2.21`。
-更多配置信息，参见[https://github.com/Kotlin/kotlinx.coroutines#gradle](Kotlin-coroutines-cores Github)
+更多配置信息，参见[Kotlin-coroutines-cores Github](https://github.com/Kotlin/kotlinx.coroutines#gradle)
